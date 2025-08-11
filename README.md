@@ -1,5 +1,6 @@
 # Tab Extractor (Chrome Extension)  <img align="right" src="icons/48.png" />
 
+Note: This is a fork to update to keep Chrome support as this was uninstalled by my browser and I like it.
 
 ## Features
 
