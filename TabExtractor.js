@@ -43,9 +43,15 @@
       }
 
       // Remove the blank new tab Chrome creates by default
+      // const tabsInNewWindow = await chrome.tabs.query({ windowId: newWindow.id });
+      // if (tabsInNewWindow.length === 1 && tabsInNewWindow[0].url === "chrome://newtab/") {
+      //   await chrome.tabs.remove(tabsInNewWindow[0].id);
+      // }
+
+      // Change the blank new tab Chrome creates by default to a specific site
       const tabsInNewWindow = await chrome.tabs.query({ windowId: newWindow.id });
       if (tabsInNewWindow.length === 1 && tabsInNewWindow[0].url === "chrome://newtab/") {
-        await chrome.tabs.remove(tabsInNewWindow[0].id);
+        await chrome.tabs.update(tabsInNewWindow[0].id, { url: "https://checkip.amazonaws.com" });
       }
     }
   });
